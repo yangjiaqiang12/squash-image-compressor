@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Complete guide to image compression: learn how to reduce image file sizes without losing quality. Covers JPEG, PNG, WebP, and browser-based tools.">
+  <meta name="keywords" content="image compression guide, how to compress images, reduce image file size, JPEG compression, PNG compression, WebP guide">
+  <meta property="og:title" content="The Ultimate Guide to Image Compression (2026)">
+  <meta property="og:description" content="Learn everything about image compression — formats, techniques, and tools to make your images smaller and your website faster.">
+  <title>The Ultimate Guide to Image Compression (2026) — Squash</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .blog-content { max-width: 720px; margin: 0 auto; padding: 48px 0; }
+    .blog-content h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 12px; }
+    .blog-content h2 { font-size: 1.5rem; font-weight: 700; margin: 40px 0 16px; }
+    .blog-content h3 { font-size: 1.15rem; font-weight: 600; margin: 28px 0 12px; }
+    .blog-content p { margin-bottom: 16px; line-height: 1.8; color: var(--text-secondary); }
+    .blog-content ul, .blog-content ol { margin: 12px 0 24px 24px; color: var(--text-secondary); }
+    .blog-content li { margin-bottom: 8px; line-height: 1.7; }
+    .blog-content table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+    .blog-content th, .blog-content td { padding: 12px 16px; border: 1px solid var(--border); text-align: left; font-size: 0.9rem; }
+    .blog-content th { background: var(--bg-elevated); font-weight: 600; }
+    .blog-content code { background: var(--bg-elevated); padding: 2px 6px; border-radius: 4px; font-size: 0.85em; }
+    .blog-cta { background: var(--primary-light); border: 2px solid var(--primary); border-radius: var(--radius); padding: 32px; text-align: center; margin: 48px 0; }
+    .blog-cta h3 { margin: 0 0 12px; }
+    .blog-date { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 32px; }
+    .back-link { display: inline-block; margin-bottom: 24px; color: var(--primary); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <span class="logo-icon">🗜️</span>
+        <span class="logo-text">Squash</span>
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html#tool">Compress</a>
+        <a href="../index.html#features">Features</a>
+        <a href="../index.html#support">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="blog-content">
+      <a href="../index.html" class="back-link">← Back to Squash</a>
+      <p class="blog-date">May 18, 2026</p>
+      <h1>The Ultimate Guide to Image Compression (2026)</h1>
+
+      <p>Images make up over 60% of the average web page's total size. A slow-loading page can cost you visitors, SEO rankings, and revenue. The good news? With modern compression techniques, you can reduce image sizes by 50–80% without any visible quality loss.</p>
+
+      <p>In this guide, you'll learn everything about image compression — the different formats, how compression actually works, and the best tools to use (including free, privacy-first options).</p>
+
+      <h2>Why Image Compression Matters</h2>
+      <p>Uncompressed or poorly compressed images hurt your website in three ways:</p>
+      <ul>
+        <li><strong>Slower page loads</strong> — Every 100KB of extra image weight adds 0.1–0.3 seconds to load time on mobile.</li>
+        <li><strong>Lower SEO rankings</strong> — Google's Core Web Vitals penalize slow pages. Largest Contentful Paint (LCP) is heavily affected by images.</li>
+        <li><strong>Higher bandwidth costs</strong> — If you pay for CDN or hosting bandwidth, unoptimized images cost you real money.</li>
+      </ul>
+
+      <h2>Image Formats: Which One Should You Use?</h2>
+      <table>
+        <tr><th>Format</th><th>Best For</th><th>Compression</th><th>Transparency</th></tr>
+        <tr><td><strong>JPEG</strong></td><td>Photographs, complex images</td><td>Lossy (good)</td><td>❌ No</td></tr>
+        <tr><td><strong>PNG</strong></td><td>Logos, screenshots, text</td><td>Lossless</td><td>✅ Yes</td></tr>
+        <tr><td><strong>WebP</strong></td><td>Everything (modern replacement)</td><td>Both</td><td>✅ Yes</td></tr>
+        <tr><td><strong>AVIF</strong></td><td>Next-gen, best compression</td><td>Both</td><td>✅ Yes</td></tr>
+        <tr><td><strong>SVG</strong></td><td>Icons, illustrations</td><td>Vector (tiny)</td><td>✅ Yes</td></tr>
+      </table>
+
+      <h3>WebP: The Sweet Spot</h3>
+      <p>WebP offers 25–35% smaller files than JPEG at the same quality. It supports both lossy and lossless compression, plus transparency (like PNG). As of 2026, WebP is supported by <strong>97% of browsers</strong> globally. If you're not using WebP yet, you should be.</p>
+
+      <h3>AVIF: The Next Generation</h3>
+      <p>AVIF can achieve up to 50% smaller files than JPEG at equivalent quality. It also supports HDR and wide color gamut. Browser support reached 93% in 2026. The trade-off: encoding is slower than WebP.</p>
+
+      <h2>Lossy vs. Lossless Compression</h2>
+      <p><strong>Lossless compression</strong> reduces file size without changing a single pixel. It works by finding patterns in the data and encoding them more efficiently — like a ZIP file for images. PNG uses lossless compression.</p>
+      <p><strong>Lossy compression</strong> achieves much smaller files by selectively discarding visual information that humans are unlikely to notice. JPEG and WebP (in lossy mode) use this approach. At quality settings above 80%, the difference is usually invisible.</p>
+
+      <h2>How Browser-Based Compression Works</h2>
+      <p>Modern browsers include powerful image processing capabilities through the <strong>Canvas API</strong>. Here's what happens when you compress an image in a browser-based tool like Squash:</p>
+      <ol>
+        <li>The image is decoded from its original format into raw pixel data.</li>
+        <li>If resizing is needed, the image is scaled down using bicubic interpolation.</li>
+        <li>The pixel data is re-encoded into the target format at the specified quality level.</li>
+        <li>The compressed result is saved as a new file.</li>
+      </ol>
+      <p>All of this happens <strong>on your device</strong>. The image never leaves your browser, which means it's both faster (no network round-trip) and more private (no server ever sees your image).</p>
+
+      <h2>5 Tips for Maximum Compression</h2>
+      <ol>
+        <li><strong>Use WebP</strong> — Switch from JPEG/PNG to WebP for an instant 25–35% savings.</li>
+        <li><strong>Resize before compressing</strong> — Don't serve a 4000px image if it displays at 800px. Set a max width.</li>
+        <li><strong>Dial the quality</strong> — 80% quality is the sweet spot for most images. Below 70%, artifacts may appear.</li>
+        <li><strong>Remove metadata</strong> — EXIF data, color profiles, and thumbnails can add 5–15% to file size.</li>
+        <li><strong>Batch process</strong> — Compress all images in one go to maintain consistency across your site.</li>
+      </ol>
+
+      <h2>Free Tools Comparison</h2>
+      <table>
+        <tr><th>Tool</th><th>Privacy</th><th>Batch</th><th>WebP</th><th>Price</th></tr>
+        <tr><td><strong>Squash</strong></td><td>✅ Local only</td><td>✅ Yes</td><td>✅ Yes</td><td>Free</td></tr>
+        <tr><td>Squoosh</td><td>✅ Local only</td><td>❌ No</td><td>✅ Yes</td><td>Free</td></tr>
+        <tr><td>TinyPNG</td><td>❌ Uploads</td><td>✅ Yes</td><td>✅ Yes</td><td>Free (20/day)</td></tr>
+        <tr><td>Compressor.io</td><td>❌ Uploads</td><td>✅ Yes</td><td>❌ No</td><td>Free (10MB)</td></tr>
+      </table>
+
+      <div class="blog-cta">
+        <h3>Ready to compress your images?</h3>
+        <p>Try Squash — it's free, private, and works entirely in your browser. No uploads, no limits.</p>
+        <a href="../index.html" class="btn btn-primary btn-large" style="display:inline-flex; width:auto; margin-top:12px;">🗜️ Start Compressing Now</a>
+      </div>
+
+      <h2>Frequently Asked Questions</h2>
+      <h3>Does compression reduce image quality?</h3>
+      <p>Lossless compression (PNG) has zero quality loss. Lossy compression (JPEG, WebP) at 80%+ quality is virtually indistinguishable from the original to the human eye. The file size savings far outweigh any imperceptible quality changes.</p>
+
+      <h3>Can I compress images for free?</h3>
+      <p>Yes! Squash is completely free with no limits. Many other tools have daily caps, file size limits, or watermarks. Browser-based tools like Squash and Squoosh are genuinely free because they use your device's processing power instead of expensive servers.</p>
+
+      <h3>Is it safe to compress sensitive images online?</h3>
+      <p>Only if you use a browser-based tool that processes images locally. When you use Squash, your images never leave your device — there's no server to upload to. With server-based tools, your images are uploaded, processed, and (hopefully) deleted. Read the privacy policy carefully.</p>
+
+      <h3>What's the best format for web images?</h3>
+      <p>WebP is the best all-around choice in 2026. It offers excellent compression, supports transparency, and works in 97% of browsers. For maximum quality at the smallest size, AVIF is even better but has slightly lower browser support.</p>
+
+      <p style="margin-top:48px;"><em>Published May 18, 2026. Updated regularly to reflect the latest browser capabilities and best practices.</em></p>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Squash. Free and open source. <a href="../index.html#support">Support this project</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>
