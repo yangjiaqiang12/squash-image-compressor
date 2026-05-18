@@ -445,6 +445,36 @@ a { color: var(--primary); text-decoration: none; }
   color: var(--text-secondary);
 }
 
+/* Share Buttons */
+.share-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.share-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.btn-share {
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition);
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: var(--bg);
+}
+.btn-share:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
+.btn-twitter:hover { background: #1d9bf0; color: white; border-color: #1d9bf0; }
+.btn-reddit:hover { background: #ff4500; color: white; border-color: #ff4500; }
+.btn-hn:hover { background: #ff6600; color: white; border-color: #ff6600; }
+
 /* === Footer === */
 .footer {
   border-top: 1px solid var(--border);

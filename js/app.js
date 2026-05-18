@@ -296,6 +296,12 @@
 
     if (succeeded > 0) {
       toast(`Compressed ${succeeded} image${succeeded > 1 ? 's' : ''} — saved ${formatSize(totalSaved)} (${totalPct}%)`, 'success');
+      // Show donation prompt after successful compression
+      if (totalSaved > 1024 * 100) {
+        setTimeout(() => {
+          toast('☕ Saved space? Support Squash — buy me a coffee!', 'success');
+        }, 2000);
+      }
     }
     if (failed > 0) {
       toast(`Failed to compress ${failed} image${failed > 1 ? 's' : ''}`, 'error');
