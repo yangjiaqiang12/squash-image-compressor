@@ -517,6 +517,91 @@ a { color: var(--primary); text-decoration: none; }
   to { transform: translateX(0); opacity: 1; }
 }
 
+/* === PRO Panel === */
+.pro-panel {
+  margin-top: 32px;
+  border: 2px solid #f59e0b;
+  border-radius: var(--radius);
+  padding: 24px;
+  background: linear-gradient(135deg, rgba(245,158,11,0.05), var(--bg-card));
+}
+.pro-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.pro-badge {
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.pro-status {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+.pro-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.pro-feature {
+  font-size: 0.9rem;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pro-feature .check { color: #f59e0b; font-weight: 700; }
+.pro-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.pro-price {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+.btn-pro-buy {
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all var(--transition);
+  box-shadow: 0 4px 12px rgba(245,158,11,0.3);
+}
+.btn-pro-buy:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,158,11,0.4); }
+.pro-code-area {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.pro-code-area .input {
+  width: 200px;
+  font-family: monospace;
+  font-size: 0.85rem;
+}
+.pro-unlocked p {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #10b981;
+  padding: 16px 0;
+}
+
 /* === Responsive === */
 @media (max-width: 768px) {
   .hero { padding: 48px 0 32px; }

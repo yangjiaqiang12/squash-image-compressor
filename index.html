@@ -100,6 +100,31 @@
               <span class="btn-icon">⚡</span> Compress All
             </button>
           </div>
+
+          <div class="pro-panel" id="proPanel">
+            <div class="pro-header">
+              <span class="pro-badge">⭐ PRO</span>
+              <span class="pro-status" id="proStatus">Locked</span>
+            </div>
+            <div class="pro-features">
+              <div class="pro-feature"><span class="check">✓</span> Batch up to 50 images (free: 5)</div>
+              <div class="pro-feature"><span class="check">✓</span> Original quality preservation</div>
+              <div class="pro-feature"><span class="check">✓</span> Custom output dimensions</div>
+              <div class="pro-feature"><span class="check">✓</span> Strip EXIF metadata</div>
+              <div class="pro-feature"><span class="check">✓</span> Priority feature requests</div>
+            </div>
+            <div class="pro-actions" id="proLocked">
+              <p class="pro-price">One-time purchase — unlimited use</p>
+              <a href="https://ko-fi.com/squashtools/shop" target="_blank" rel="noopener" class="btn btn-pro-buy">🔓 Unlock PRO — $5</a>
+              <div class="pro-code-area">
+                <input type="text" id="proCodeInput" class="input" placeholder="Paste unlock code here">
+                <button class="btn btn-secondary" id="proCodeBtn">Activate</button>
+              </div>
+            </div>
+            <div class="pro-unlocked" id="proUnlocked" style="display:none;">
+              <p>✅ PRO features unlocked — enjoy unlimited batch compression!</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

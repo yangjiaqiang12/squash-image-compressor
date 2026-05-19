@@ -379,6 +379,42 @@
     }
   });
 
+  // ── PRO Unlock ─────────────────────────────────────────
+  const PRO_CODE = 'SQUASH-PRO-2026';
+  const proPanel = $('#proPanel');
+  const proStatus = $('#proStatus');
+  const proLocked = $('#proLocked');
+  const proUnlocked = $('#proUnlocked');
+  const proCodeInput = $('#proCodeInput');
+  const proCodeBtn = $('#proCodeBtn');
+
+  function checkProStatus() {
+    const unlocked = localStorage.getItem('squash-pro') === 'true';
+    if (unlocked) {
+      proStatus.textContent = 'Active';
+      proStatus.style.color = '#10b981';
+      proLocked.style.display = 'none';
+      proUnlocked.style.display = 'block';
+    }
+    return unlocked;
+  }
+
+  proCodeBtn.addEventListener('click', () => {
+    const code = proCodeInput.value.trim().toUpperCase();
+    if (code === PRO_CODE || code === 'SQUASHPRO' || code.startsWith('SQUASH-PRO')) {
+      localStorage.setItem('squash-pro', 'true');
+      proStatus.textContent = 'Active';
+      proStatus.style.color = '#10b981';
+      proLocked.style.display = 'none';
+      proUnlocked.style.display = 'block';
+      toast('PRO unlocked! Unlimited batch processing enabled.', 'success');
+    } else {
+      toast('Invalid code. Please check and try again.', 'error');
+    }
+  });
+
+  checkProStatus();
+
   // ── Demo mode — load a sample image for first-time visitors ──
   const hasVisited = localStorage.getItem('squash-visited');
   if (!hasVisited) {

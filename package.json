@@ -1,0 +1,11 @@
+{
+  "name": "squash-image-compressor",
+  "version": "1.0.0",
+  "description": "Free, private image compression that runs entirely in the browser. No uploads, no limits.",
+  "main": "js/app.js",
+  "files": ["js/", "css/", "index.html"],
+  "keywords": ["image-compressor", "image-compression", "browser", "privacy", "canvas", "webp", "jpeg", "png", "client-side", "no-upload", "free"],
+  "homepage": "https://yangjiaqiang12.github.io/squash-image-compressor/",
+  "repository": "github:yangjiaqiang12/squash-image-compressor",
+  "license": "MIT"
+}
