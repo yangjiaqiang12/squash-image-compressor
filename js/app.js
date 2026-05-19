@@ -121,9 +121,21 @@
   // ── Add Images ─────────────────────────────────────────
   function addFiles(files) {
     const validTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/avif', 'image/bmp', 'image/svg+xml', 'image/gif', 'image/tiff'];
+    const isPro = localStorage.getItem('squash-pro') === 'true';
+    const maxImages = isPro ? 50 : 5;
     let added = 0;
 
+    if (!isPro && images.length >= maxImages) {
+      toast('Free limit: 5 images. Unlock PRO — $5.', 'error');
+      proPanel.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+
     Array.from(files).forEach((file) => {
+      if (!isPro && images.length + added >= maxImages) {
+        toast('Free limit reached. Pay $5 on Ko-fi to unlock.', 'error');
+        return;
+      }
       if (file.size > 50 * 1024 * 1024) {
         toast(`"${file.name}" is too large (max 50MB)`, 'error');
         return;
@@ -380,38 +392,46 @@
   });
 
   // ── PRO Unlock ─────────────────────────────────────────
-  const PRO_CODE = 'SQUASH-PRO-2026';
   const proPanel = $('#proPanel');
   const proStatus = $('#proStatus');
   const proLocked = $('#proLocked');
   const proUnlocked = $('#proUnlocked');
-  const proCodeInput = $('#proCodeInput');
-  const proCodeBtn = $('#proCodeBtn');
+  const proUnlockBtn = $('#proUnlockBtn');
+  const proPayBtn = $('#proPayBtn');
 
   function checkProStatus() {
     const unlocked = localStorage.getItem('squash-pro') === 'true';
     if (unlocked) {
       proStatus.textContent = 'Active';
       proStatus.style.color = '#10b981';
-      proLocked.style.display = 'none';
-      proUnlocked.style.display = 'block';
+      if (proLocked) proLocked.style.display = 'none';
+      if (proUnlocked) proUnlocked.style.display = 'block';
     }
     return unlocked;
   }
 
-  proCodeBtn.addEventListener('click', () => {
-    const code = proCodeInput.value.trim().toUpperCase();
-    if (code === PRO_CODE || code === 'SQUASHPRO' || code.startsWith('SQUASH-PRO')) {
-      localStorage.setItem('squash-pro', 'true');
-      proStatus.textContent = 'Active';
-      proStatus.style.color = '#10b981';
-      proLocked.style.display = 'none';
-      proUnlocked.style.display = 'block';
-      toast('PRO unlocked! Unlimited batch processing enabled.', 'success');
-    } else {
-      toast('Invalid code. Please check and try again.', 'error');
-    }
+  proPayBtn.addEventListener('click', () => {
+    // Track that user initiated payment
+    sessionStorage.setItem('squash-paying', '1');
   });
+
+  proUnlockBtn.addEventListener('click', () => {
+    // Honor-system unlock — user pays on Ko-fi then clicks here
+    localStorage.setItem('squash-pro', 'true');
+    proStatus.textContent = 'Active';
+    proStatus.style.color = '#10b981';
+    proLocked.style.display = 'none';
+    proUnlocked.style.display = 'block';
+    toast('PRO unlocked! Thanks for your support.', 'success');
+  });
+
+  // If returning from Ko-fi payment, auto-unlock
+  if (sessionStorage.getItem('squash-paying') === '1') {
+    sessionStorage.removeItem('squash-paying');
+    if (!checkProStatus()) {
+      proUnlockBtn.click();
+    }
+  }
 
   checkProStatus();
 

@@ -584,15 +584,10 @@ a { color: var(--primary); text-decoration: none; }
   box-shadow: 0 4px 12px rgba(245,158,11,0.3);
 }
 .btn-pro-buy:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,158,11,0.4); }
-.pro-code-area {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-.pro-code-area .input {
-  width: 200px;
-  font-family: monospace;
+.pro-or {
   font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
 }
 .pro-unlocked p {
   text-align: center;
